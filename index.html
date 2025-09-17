@@ -107,7 +107,7 @@
       };
       const date = new Date();
       const time = date.toLocaleTimeString('en-US', options).toLowerCase();
-      const formatted = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()} ${time} NYC`;
+      const formatted = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()} ${time} Philly, USA`;
       document.getElementById('clock').textContent = formatted;
     }
     setInterval(updateClock, 1000);
