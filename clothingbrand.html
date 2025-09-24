@@ -34,14 +34,14 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      max-width: 800px; /* controls total grid width */
+      max-width: 600px; /* smaller total width */
       width: 100%;
     }
     /* Grid items */
     .grid-item {
       background-color: #111;
       border: 1px solid #333;
-      aspect-ratio: 1 / 1; /* keeps perfect squares */
+      aspect-ratio: 1 / 1; /* perfect squares */
       overflow: hidden;
       cursor: pointer;
     }
@@ -53,7 +53,7 @@
     .grid-item img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* fills the square nicely */
+      object-fit: cover;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
     .grid-item:hover img {
@@ -74,8 +74,8 @@
 </head>
 <body>
 
-  <h1>Clothing Brand</h1>
-  <p>Explore the projects below:</p>
+
+  <p>Jarhead Projects ©</p>
 
   <!-- 4x4 Grid -->
   <div class="grid">
