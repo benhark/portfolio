@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sanguisuge Collection — Clothing Brand</title>
+  <title>sanguisuge collection</title>
   <link rel="icon" href="/favicon.ico">
   <style>
     :root {
@@ -60,7 +60,7 @@
 
   <!-- Images (centered, same size as grid) -->
   <div class="image-wrapper">
-    <img src="images/collect.png" alt="Sanguisuge Collection Image 1">
+    <img src="collect.png" alt="sanguisuge collection">
   </div>
 
 
