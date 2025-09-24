@@ -3,54 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>sanguisuge collection</title>
+  <title>Sanguisuge Collection</title>
   <link rel="icon" href="/favicon.ico">
   <style>
-    :root {
-      --font: 'Courier New', Courier, monospace;
-      --text-color: #9ef;
-      --bg-color: #000;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: var(--font);
-      background-color: var(--bg-color);
-      color: var(--text-color);
+      background-color: #fff;
+      color: #000;
+      font-family: 'Courier New', Courier, monospace;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 2rem;
       text-align: center;
+      margin: 0;
+      padding: 2rem;
     }
+
     h1 {
-      margin-bottom: 1.5rem;
+      font-weight: normal; /* not bold */
+      margin-bottom: 2rem;
     }
-    /* Image wrapper: matches grid square size */
-    .image-wrapper {
-      width: 140px; /* matches grid square size (adjust if you resize grid) */
-      aspect-ratio: 1 / 1;
-      margin: 1rem auto;
-      overflow: hidden;
-      border: 1px solid #333;
-      background: #111;
+
+    .project-image {
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
     }
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-    }
-    footer a {
-      color: var(--text-color);
+
+    a.back-link {
+      color: #000;
       text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -58,15 +49,9 @@
 
   <h1>Sanguisuge Collection</h1>
 
-  <!-- Images (centered, same size as grid) -->
-  <div class="image-wrapper">
-    <img src="collect.png" alt="sanguisuge collection">
-  </div>
+  <img src="collect.png" alt="Sanguisuge Collection" class="project-image">
 
-
-  <footer>
-    <p><a href="clothing-brand.html">← Back to Clothing Brand</a></p>
-  </footer>
+  <a href="clothing-brand.html" class="back-link">← Back to Portfolio</a>
 
 </body>
 </html>
