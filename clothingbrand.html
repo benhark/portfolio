@@ -8,8 +8,8 @@
   <style>
     :root {
       --font: 'Courier New', Courier, monospace;
-      --text-color: #9ef;
-      --bg-color: #fff;
+      --text-color: #000; /* black text */
+      --bg-color: #fff;   /* white background */
     }
     * {
       margin: 0;
@@ -34,14 +34,15 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      max-width: 600px; /* smaller total width */
+      max-width: 600px;
       width: 100%;
+      gap: 0; /* remove gaps if needed */
     }
     /* Grid items */
     .grid-item {
-      background-color: #111;
-      border: 1px solid #333;
-      aspect-ratio: 1 / 1; /* perfect squares */
+      background-color: transparent; /* remove dark background */
+      border: none; /* remove borders */
+      aspect-ratio: 1 / 1;
       overflow: hidden;
       cursor: pointer;
     }
@@ -60,7 +61,6 @@
       transform: scale(1.05);
       opacity: 0.9;
     }
-    /* Footer navigation */
     footer {
       margin-top: 2rem;
       font-size: 0.8rem;
@@ -70,17 +70,18 @@
       color: var(--text-color);
       text-decoration: none;
     }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-
   <p>Jarhead Projects ©</p>
 
-  <!-- 4x4 Grid -->
   <div class="grid">
-    <div class="grid-item"><a href="sanguisuge-collection.html"><img src="collect.png" alt="sanguisuge collection"></a></div>
-    <div class="grid-item"><a href="sanguisuge-magazine.html"><img src="COVER2-1.png" alt="sanguisuge magazine"></a></div>
+    <div class="grid-item"><a href="sanguisuge-collection.html"><img src="collect.png" alt="Sanguisuge Collection"></a></div>
+    <div class="grid-item"><a href="sanguisuge-magazine.html"><img src="COVER2-1.png" alt="Sanguisuge Magazine"></a></div>
     <div class="grid-item"><a href="project3.html"><img src="images/project3.jpg" alt="Project 3"></a></div>
     <div class="grid-item"><a href="project4.html"><img src="images/project4.jpg" alt="Project 4"></a></div>
     <div class="grid-item"><a href="project5.html"><img src="images/project5.jpg" alt="Project 5"></a></div>
