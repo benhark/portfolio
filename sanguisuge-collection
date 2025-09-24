@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanguisuge Collection — Clothing Brand</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root {
+      --font: 'Courier New', Courier, monospace;
+      --text-color: #9ef;
+      --bg-color: #000;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+    /* Image wrapper: matches grid square size */
+    .image-wrapper {
+      width: 140px; /* matches grid square size (adjust if you resize grid) */
+      aspect-ratio: 1 / 1;
+      margin: 1rem auto;
+      overflow: hidden;
+      border: 1px solid #333;
+      background: #111;
+    }
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+    }
+    footer a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sanguisuge Collection</h1>
+
+  <!-- Images (centered, same size as grid) -->
+  <div class="image-wrapper">
+    <img src="images/collect.png" alt="Sanguisuge Collection Image 1">
+  </div>
+
+
+  <footer>
+    <p><a href="clothing-brand.html">← Back to Clothing Brand</a></p>
+  </footer>
+
+</body>
+</html>
