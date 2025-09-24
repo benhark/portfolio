@@ -42,25 +42,33 @@
       background-color: #111;
       border: 1px solid #333;
       aspect-ratio: 1 / 1; /* keeps perfect squares */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
+      overflow: hidden;
       cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .grid-item:hover {
-      background-color: #222;
     }
     .grid-item a {
-      color: var(--text-color);
-      text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fills the square nicely */
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .grid-item:hover img {
+      transform: scale(1.05);
+      opacity: 0.9;
     }
     /* Footer navigation */
     footer {
       margin-top: 2rem;
       font-size: 0.8rem;
       color: var(--text-color);
+    }
+    footer a {
+      color: var(--text-color);
+      text-decoration: none;
     }
   </style>
 </head>
@@ -71,22 +79,22 @@
 
   <!-- 4x4 Grid -->
   <div class="grid">
-    <div class="grid-item"><a href="#">Project 1</a></div>
-    <div class="grid-item"><a href="#">Project 2</a></div>
-    <div class="grid-item"><a href="#">Project 3</a></div>
-    <div class="grid-item"><a href="#">Project 4</a></div>
-    <div class="grid-item"><a href="#">Project 5</a></div>
-    <div class="grid-item"><a href="#">Project 6</a></div>
-    <div class="grid-item"><a href="#">Project 7</a></div>
-    <div class="grid-item"><a href="#">Project 8</a></div>
-    <div class="grid-item"><a href="#">Project 9</a></div>
-    <div class="grid-item"><a href="#">Project 10</a></div>
-    <div class="grid-item"><a href="#">Project 11</a></div>
-    <div class="grid-item"><a href="#">Project 12</a></div>
-    <div class="grid-item"><a href="#">Project 13</a></div>
-    <div class="grid-item"><a href="#">Project 14</a></div>
-    <div class="grid-item"><a href="#">Project 15</a></div>
-    <div class="grid-item"><a href="#">Project 16</a></div>
+    <div class="grid-item"><a href="project1.html"><img src="images/project1.jpg" alt="Project 1"></a></div>
+    <div class="grid-item"><a href="project2.html"><img src="images/project2.jpg" alt="Project 2"></a></div>
+    <div class="grid-item"><a href="project3.html"><img src="images/project3.jpg" alt="Project 3"></a></div>
+    <div class="grid-item"><a href="project4.html"><img src="images/project4.jpg" alt="Project 4"></a></div>
+    <div class="grid-item"><a href="project5.html"><img src="images/project5.jpg" alt="Project 5"></a></div>
+    <div class="grid-item"><a href="project6.html"><img src="images/project6.jpg" alt="Project 6"></a></div>
+    <div class="grid-item"><a href="project7.html"><img src="images/project7.jpg" alt="Project 7"></a></div>
+    <div class="grid-item"><a href="project8.html"><img src="images/project8.jpg" alt="Project 8"></a></div>
+    <div class="grid-item"><a href="project9.html"><img src="images/project9.jpg" alt="Project 9"></a></div>
+    <div class="grid-item"><a href="project10.html"><img src="images/project10.jpg" alt="Project 10"></a></div>
+    <div class="grid-item"><a href="project11.html"><img src="images/project11.jpg" alt="Project 11"></a></div>
+    <div class="grid-item"><a href="project12.html"><img src="images/project12.jpg" alt="Project 12"></a></div>
+    <div class="grid-item"><a href="project13.html"><img src="images/project13.jpg" alt="Project 13"></a></div>
+    <div class="grid-item"><a href="project14.html"><img src="images/project14.jpg" alt="Project 14"></a></div>
+    <div class="grid-item"><a href="project15.html"><img src="images/project15.jpg" alt="Project 15"></a></div>
+    <div class="grid-item"><a href="project16.html"><img src="images/project16.jpg" alt="Project 16"></a></div>
   </div>
 
   <footer>
