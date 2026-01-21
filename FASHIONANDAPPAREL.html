@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Your Name — Portfolio</title> 
+  <link rel="icon" href="/favicon.ico"> 
+  <style> 
+    :root { 
+      --font: 'Courier New', Courier, monospace; 
+      --text-color: #9ef; /* light cyan like screenshot */ 
+      --bg-color: #000;   /* black background */ 
+    } 
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    } 
+    body { 
+      font-family: var(--font); 
+      background-color: var(--bg-color); 
+      color: var(--text-color); 
+      text-align: center; 
+      padding-top: 6rem; 
+      font-size: 0.9rem; 
+      font-weight: normal; 
+    } 
+    .logo { 
+      margin-bottom: 1rem; 
+    } 
+    #clock { 
+      font-size: 0.8rem; 
+      margin-bottom: 3rem; 
+    } 
+    .links { 
+      display: flex; 
+      flex-direction: column; 
+      gap: 0.8rem; 
+      margin-bottom: 2rem; 
+    } 
+    .links a { 
+      text-decoration: none; 
+      color: var(--text-color); 
+      font-size: 0.9rem; 
+    } 
+    .socials { 
+      display: flex; 
+      justify-content: center; 
+      gap: 1rem; 
+      margin-bottom: 1.5rem; 
+    } 
+    .socials a { 
+      color: var(--text-color); 
+      font-size: 1rem; 
+      text-decoration: none; 
+    } 
+    .logo-below { 
+      margin-top: 1.5rem; 
+    } 
+    .logo-below img { 
+      display: block; 
+      margin: 0 auto; 
+    } 
+    footer { 
+      margin-top: 4rem; 
+      font-size: 0.75rem; 
+      color: var(--text-color); 
+    } 
+  </style> 
+</head> 
+<body> 
+  <!-- Logo / Branding --> 
+  <div class="logo"> 
+    <img src="22223.png" alt="Logo" width="120"> 
+  </div> 
+ 
+  <!-- Clock --> 
+  <div id="clock"></div> 
+ 
+  <!-- Main Links --> 
+  <div class="links"> 
+    <a href="JARHEADPROJECTS.html">JARHEAD PROJECTS</a> 
+    <a href="FASHIONANDAPPAREL.html">FASHION & APPAREL</a> 
+    <a href="MUSICVISUALS.html">MUSIC VISUALS</a> 
+    <a href="#LOGOSANDTYPOGRAPHY">LOGOS & TYPOGRAPHY</a> 
+    <a href="PERSONAL.html"> PERSONAL </a>  
+    <a href="#contact">contact</a>  
+    <a href="#about me">about me</a>  
+  </div> 
+ 
+  <!-- Social Icons --> 
+  <div class="socials"> 
+    <a href="#">IG</a> 
+    <a href="#">YT</a> 
+    <a href="#">FB</a> 
+    <a href="#">SP</a> 
+    <a href="#">TW</a> 
+  </div> 
+ 
+  <!-- Footer --> 
+  <footer> 
+    <p>terms&nbsp;&nbsp;privacy&nbsp;&nbsp;faq&nbsp;&nbsp;accessibility</p> 
+  </footer> 
+ 
+  <!-- Clock Script --> 
+  <script> 
+    function updateClock() { 
+      const options = { 
+        timeZone: 'America/New_York', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true 
+      }; 
+      const date = new Date(); 
+      const time = date.toLocaleTimeString('en-US', options).toLowerCase(); 
+      const formatted = `${date.getMonth()+1}/${date.getDate()}/${date.getFullYear()} ${time} Philly, USA`; 
+      document.getElementById('clock').textContent = formatted; 
+    } 
+    setInterval(updateClock, 1000); 
+    updateClock(); 
+  </script> 
+</body> 
+</html>
