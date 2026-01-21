@@ -26,12 +26,12 @@
     }
 
     .collection-statement {
-      font-size: 0.75rem;        /* smaller than title */
+      font-size: 0.75rem;
       line-height: 1.6;
       max-width: 700px;
       opacity: 0.75;
       margin-bottom: 2.5rem;
-      white-space: pre-line;     /* preserves paragraph spacing */
+      white-space: pre-line;
     }
 
     .project-image {
@@ -39,6 +39,20 @@
       max-height: 80vh;
       object-fit: contain;
       margin-bottom: 2rem;
+      cursor: zoom-in;
+    }
+
+    /* FULLSCREEN ZOOM STATE */
+    .project-image.zoomed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 95vw;
+      max-height: 95vh;
+      z-index: 1000;
+      cursor: zoom-out;
+      background: #fff;
     }
 
     a.back-link {
@@ -66,18 +80,43 @@
     Instead of presenting images of horror directly, SANGUISUGE is interested primarily in how through frequency, the image becomes normal, how systems extract without an accompanying spectacle, and how many people mistake consuming with being participatory. Therefore, this collection encompasses the tension of elegance vs erosion along the continuum of what is produced and/or worn in relation to what they actually represent.
   </div>
 
-  <img src="COVER2-1.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-02.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-03.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-04.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-05.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-06.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-07.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-08.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-09.png" alt="Sanguisuge Magazine" class="project-image">
-  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-10.png" alt="Sanguisuge Magazine" class="project-image">
+  <img src="COVER2-1.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-02.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-03.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-04.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-05.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-06.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-07.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-08.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-09.png" class="project-image" alt="">
+  <img src="FALL_WINTER_CAPSULE001_SANGUISUGE_20242025-10.png" class="project-image" alt="">
 
   <a href="FASHIONANDAPPAREL.html" class="back-link">← back</a>
+
+  <script>
+    const images = document.querySelectorAll('.project-image');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const isZoomed = img.classList.contains('zoomed');
+
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+
+        if (!isZoomed) {
+          img.classList.add('zoomed');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
 </body>
 </html>
