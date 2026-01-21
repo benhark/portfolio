@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanguisuge Collection</title>
   <link rel="icon" href="/favicon.ico">
+
   <style>
     body {
-      background-color: #fff; /* page background */
-      color: #000; /* text color */
+      background-color: #fff;
+      color: #000;
       font-family: 'Courier New', Courier, monospace;
       display: flex;
       flex-direction: column;
@@ -21,7 +22,7 @@
     }
 
     h1 {
-      font-weight: normal; /* not bold */
+      font-weight: normal;
       margin-bottom: 2rem;
     }
 
@@ -30,7 +31,20 @@
       max-height: 80vh;
       object-fit: contain;
       margin-bottom: 2rem;
-      /* border removed */
+      cursor: zoom-in;
+    }
+
+    /* FULLSCREEN ZOOM */
+    .project-image.zoomed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 95vw;
+      max-height: 95vh;
+      z-index: 1000;
+      cursor: zoom-out;
+      background: #fff;
     }
 
     a.back-link {
@@ -45,13 +59,49 @@
     }
   </style>
 </head>
+
 <body>
 
   <h1>Sanguisuge Collection</h1>
 
-  <img src="collect.png" alt="Sanguisuge Collection" class="project-image">
+  <img src="collect.png" class="project-image" alt="">
+  <img src="running_grey_OFFICIAL.png" class="project-image" alt="">
+  <img src="cursive_grey_OFFICIAL.png" class="project-image" alt="">
+  <img src="WHITE_HOODIE_OFFICIAL.png" class="project-image" alt="">
+  <img src="WHITE_SWEATS_OFFICIAL.png" class="project-image" alt="">
+  <img src="running_yellow_OFFICIAL.png" class="project-image" alt="">
+  <img src="cursive_yellow_OFFICIAL.png" class="project-image" alt="">
+  <img src="BLACK_HOODIE_OFFICIAL.png" class="project-image" alt="">
+  <img src="BLACK_SWEATS_OFFICIAL.png" class="project-image" alt="">
+  <img src="OFFICIA_TRIMMEDL.png" class="project-image" alt="">
+  <img src="trimmed.png" class="project-image" alt="">
 
   <a href="clothingbrand.html" class="back-link">← back to clothing brand</a>
+
+  <script>
+    const images = document.querySelectorAll('.project-image');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const isZoomed = img.classList.contains('zoomed');
+
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+
+        if (!isZoomed) {
+          img.classList.add('zoomed');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
 
 </body>
 </html>
