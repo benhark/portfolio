@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanguisuge Collection</title>
+  <link rel="icon" href="/favicon.ico">
+
+  <style>
+    body {
+      background-color: #fff;
+      color: #000;
+      font-family: 'Courier New', Courier, monospace;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      margin: 0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-weight: normal;
+      margin-bottom: 2rem;
+    }
+
+    .project-image {
+      max-width: 90%;
+      max-height: 80vh;
+      object-fit: contain;
+      margin-bottom: 2rem;
+      cursor: zoom-in;
+    }
+
+    /* FULLSCREEN ZOOM */
+    .project-image.zoomed {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 95vw;
+      max-height: 95vh;
+      z-index: 1000;
+      cursor: zoom-out;
+      background: #fff;
+    }
+
+    a.back-link {
+      color: #000;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Sanguisuge Collection</h1>
+
+  <img src="EVILHEADPOSTER_creased.png" class="project-image" alt="">
+
+  <a href="JARHEADPROJECTS.html" class="back-link">←back</a>
+
+  <script>
+    const images = document.querySelectorAll('.project-image');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        const isZoomed = img.classList.contains('zoomed');
+
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+
+        if (!isZoomed) {
+          img.classList.add('zoomed');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        images.forEach(i => i.classList.remove('zoomed'));
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
